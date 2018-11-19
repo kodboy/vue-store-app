@@ -5,6 +5,7 @@ import GoodsList from '../pages/GoodsList'
 import Caculator from '../components/Calculator'
 import GoodsImage from '../components/GoodsImage'
 import GoodsTitle from '../components/GoodsTitle'
+import Cart from '../pages/Cart'
 
 import UserList from  '../pages/UserList'
 
@@ -20,6 +21,7 @@ export default new Router({
     {
       path: '/userList/:userId',
       name: 'userList',
+      alias: '/users/:userId',
       component: UserList
     },
     {
@@ -51,6 +53,15 @@ export default new Router({
       path: '/caculator',
       name: 'caculator',
       component: Caculator
+    },
+    {
+      path: '/cart',
+      name: 'Cart',
+      component: Cart
     }
   ]
 })
+
+// 注意区分 $router 和 $route 的用法.
+// $router: 代表项目的router,一个全局变量
+// $route: 当前传入的某个route, router列表中的某一项

@@ -1,7 +1,6 @@
 <template>
   <div id="app">
-    <!--<h1 v-text="message"> message </h1>-->
-    <!--<Caculator></Caculator>-->
+    <h1 v-text="message"> message </h1>
     <router-link to="/userList/123">
       UserList123
     </router-link>
@@ -14,6 +13,9 @@
     <router-link to="/caculator">
       <button>caculator</button>
     </router-link>
+    <hr>
+    <button @click="pushToCart"> toCart
+    </button>
     <hr>
     <router-view>
     </router-view>
@@ -37,7 +39,9 @@
       }
     },
     methods: {
-
+      pushToCart() {
+        this.$router.push({path: '/cart?cartId=532313'})
+      }
     }
   }
 </script>

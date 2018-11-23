@@ -6,6 +6,10 @@ import Caculator from '../components/Calculator'
 import GoodsImage from '../components/GoodsImage'
 import GoodsTitle from '../components/GoodsTitle'
 import Cart from '../pages/Cart'
+import Demo from '../pages/demo'
+import Counter from '../pages/demo/Counter'
+import Amy from '../pages/demo/Amy'
+import Bob from '../pages/demo/Bob'
 
 import UserList from  '../pages/UserList'
 
@@ -58,6 +62,28 @@ export default new Router({
       path: '/cart',
       name: 'Cart',
       component: Cart
+    },
+    {
+      path: '/demo',
+      name: 'Demo',
+      component: Demo,
+      children: [
+        {
+          path: 'counter',
+          name: 'Counter',
+          component: Counter
+        },
+        {
+          path: 'amy',
+          name: 'amy',
+          component: Amy
+        },
+        {
+          path: 'bob',
+          name: 'bob',
+          component: Bob
+        }
+      ]
     }
   ]
 })
